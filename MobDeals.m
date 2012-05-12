@@ -132,24 +132,16 @@
         
         //Verify the transaction based on the md5 hash
         if ([[self md5:[NSString stringWithFormat:@"%@%@%@%@", coins, timestamp, transID, secretKey]] isEqualToString:signature]) {
-            //If the transaction is valid, display the number of coins obtained
-            UIAlertView *success = [[UIAlertView alloc]
-                                    initWithTitle: @"Transaction Complete"
-                                    message: [NSString stringWithFormat:@"User has purchased %@ coins!", coins]
-                                    delegate: self cancelButtonTitle: @"Ok" 
-                                    otherButtonTitles: nil];
-            
-            [success show];
+
+//********************************************************************************************************
+            //If the transaction is valid, credit the user here!
+//********************************************************************************************************
         }
         else {
-            //If the transaction fails, display notification that verification failed
-            UIAlertView *failure = [[UIAlertView alloc]
-                                    initWithTitle: @"Transaction Failed"
-                                    message: @"Transaction was not verified!"
-                                    delegate: self cancelButtonTitle: @"Ok" 
-                                    otherButtonTitles: nil];
-            
-            [failure show];
+
+//********************************************************************************************************
+            //If the transaction failed, perform notice code here!
+//********************************************************************************************************
         }
         
         return NO;
