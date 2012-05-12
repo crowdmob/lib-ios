@@ -1,2 +1,2 @@
-mobdeals-ios-sdk
+MobDeals iOS SDK
 ================
