@@ -81,8 +81,6 @@
         url = [NSURL URLWithString:@"http://offerwall.mobstaging.com"];
     }
     
-    url = [NSURL URLWithString:@"http://localhost:3001"];
-    
     //Create the URL request and pass it to the UIWebView
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [webView loadRequest:urlRequest];
@@ -173,9 +171,7 @@
     if (environment != @"PRODUCTION") {
         URL = [NSURL URLWithString:@"http://deals.mobstaging.com/loot/verify_install.json"];
     }
-    
-    //URL = [NSURL URLWithString:@"http://localhost:3000/loot/verify_install.json"];
-    
+        
     //Set the parameters
     NSData *parameters = [[NSString stringWithFormat:@"verify[permalink]=%@&verify[uuid]=%@&verify[secret_hash]=%@", permalink, uuidHash, secretHash] dataUsingEncoding:NSUTF8StringEncoding];
     
