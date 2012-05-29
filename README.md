@@ -29,6 +29,7 @@ However, for a complete functionality without any additional modification, the f
 * MobDeals.storyboard
 * cancel_button.png
 * cancel_button@2x.png
+
 Without these files and additional modification, you will not have a working implementation. These files are used for the layout of the modal view controller that launches the UIWebView for the Offerwall and add a graphic for the close button on the UIWebView. These can all be created or modified as needed to produce the interface that fits your application best as long as they are correctly connected to the CrowdMob.h and Crowdmob.h files.
 
 
