@@ -7,7 +7,10 @@ MobDeals is an in-app service (also accessible via web) that allows the sale of 
 ### Loot (Documentation Forthcoming - check out the comments in our files!)
 Loot is an incentivized install service. Installs of a particular application through Loot are recorded on the CrowdMob servers. The drop-in files allow for a publisher to send a hashed mac address to the CrowdMob servers, allowing for confirmation of the source of the installs.
 
-## File Structure
+## Sample Integration Application
+To see a full sample integration of the MobDeals Offerwall and Loot, check out our [sample integration app on GitHub](https://github.com/crowdmob/ios-sample-integration).
+
+## General File Structure
 The CrowdMob drop-in files offer the ability to verify an install (for Loot) and open a UIWebView and perform a package purchase (for MobDeals). A delegate is used to obtain the result of each of these processes (failure, success, and status code on success for Loot).
 
 ## Implementation
@@ -16,8 +19,6 @@ The MobDeals Offerwall requires 3 elements:
 1. Launching the Offerwall
 2. Closing the Offerwall
 3. Listen for a transaction result
-
-To see a full sample integration of the MobDeals Offerwall, check out our [sample integration app on GitHub](https://github.com/crowdmob/ios-sample-integration).
 
 #### General Setup
 In your view controller that will launch the Offerwall, you must import CrowdMob.h in your .h and .m files.
