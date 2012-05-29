@@ -20,8 +20,8 @@
 //Runs when a verification succeeds or fails
 - (void) verificationStatus:(BOOL) status verificationStatusCode:(NSInteger) statusCode;
 
-//Runs when a MobDeals transaction succeeds or fails
-- (void) transactionStatus:(BOOL) status;
+//Runs when a MobDeals transaction succeeds or fails, sending transaction information on success
+- (void) transactionStatus:(BOOL) status currencyAmount:(NSInteger) amount transactionId:(NSString *) transactionId timestamp:(NSString *) timestamp;
 
 @end
 

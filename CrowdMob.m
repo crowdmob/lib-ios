@@ -134,16 +134,16 @@
         //Verify the transaction based on the md5 hash
         if ([[self md5:[NSString stringWithFormat:@"%@%@%@%@", coins, timestamp, transID, secretKey]] isEqualToString:signature]) {
             //If the transaction succeeds, inform the delegate
-            if([delegate respondsToSelector:@selector(transactionStatus:)])
+            if([delegate respondsToSelector:@selector(transactionStatus:currencyAmount:transactionId:timestamp:)])
             {
-                [delegate transactionStatus:true];
+                [delegate transactionStatus:true currencyAmount:[coins intValue] transactionId:transID timestamp:timestamp];
             }
         }
         else {
             //If the transaction fails, inform the delegate
             if([delegate respondsToSelector:@selector(transactionStatus:)])
             {
-                [delegate transactionStatus:false];
+                [delegate transactionStatus:false currencyAmount:0 transactionId:NULL timestamp:NULL];
             }
         }
         
