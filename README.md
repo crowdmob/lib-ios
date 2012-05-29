@@ -46,12 +46,12 @@ You must subclass your view controller to use the CrowdMob delegate and declare 
 }</code></pre>
 
 You must also implement the delegate functions to close the Offerwall and obtain the result of a transaction.
-'''objective-c
+```objective-c
 //Delegate method from the modal view controller's required protocol that closes the UIWebView
 - (void) closeOfferwall:(BOOL) status;
 
 //Delegate method that runs when a MobDeals transaction succeeds or fails, along with transaction information on success
-- (void) transactionStatus:(BOOL) status;'''
+- (void) transactionStatus:(BOOL) status;```
 
 #### .m File
 ##### Launching the Offerwall
