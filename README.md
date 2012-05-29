@@ -28,10 +28,10 @@ You must also make sure your application requires or checks for an Internet conn
 
 #### .h File
 You must subclass your view controller to use the CrowdMob delegate and declare the Offerwall as a CrowdMob class instance.
->@interface ViewController : UIViewController<CrowdMobDelegate, UITextFieldDelegate>
->{
->    CrowdMob *offerwall;
->}
+'@interface ViewController : UIViewController<CrowdMobDelegate, UITextFieldDelegate>
+{
+    CrowdMob *offerwall;
+}'
 
 You must also implement the delegate functions to close the Offerwall and obtain the result of a transaction.
 >//Delegate method from the modal view controller's required protocol that closes the UIWebView
