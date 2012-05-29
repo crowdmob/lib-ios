@@ -35,10 +35,10 @@ You must subclass your view controller to use the CrowdMob delegate and declare 
 
 You must also implement the delegate functions to close the Offerwall and obtain the result of a transaction.
 >//Delegate method from the modal view controller's required protocol that closes the UIWebView
->- (void) closeOfferwall:(BOOL) status;
+>\- (void) closeOfferwall:(BOOL) status;
 >
 >//Delegate method that runs when a MobDeals transaction succeeds or fails, along with transaction information on success
->- (void) transactionStatus:(BOOL) status;
+>\- (void) transactionStatus:(BOOL) status;
 
 #### .m File
 ##### Launching the Offerwall
@@ -61,7 +61,7 @@ The Offerwall operates through a UIWebView. To launch the UIWebView, you must 1)
 ##### Closing the Offerwall
 When the close button is pressed within the Offerwall, a delegate method is called. You may implement closing the offerwall in whatever manner you wish, but we suggest the following method.
 >//Delegate method from the modal view controller's required protocol that closes the UIWebView
->- (void) closeOfferwall:(BOOL) status
+>\- (void) closeOfferwall:(BOOL) status
 >{
 >    if (status) {
 >        //Dismiss the modal view
@@ -79,7 +79,7 @@ When the close button is pressed within the Offerwall, a delegate method is call
 ##### Listening for a Transaction Result
 When a user attempts a transaction, a delegate method is called upon success or failure, returning the status of the transaction. If the transaction succeeds, the amount of virtual currency, the transaction ID, and the timestamp are accessible within this delegate function. You may call the relevant functions that credit the user within this method. The suggested implementation is below.
 >//Delegate method that runs when a MobDeals transaction succeeds or fails, along with transaction information on success
->- (void) transactionStatus:(BOOL)status currencyAmount:(NSInteger)amount transactionId:(NSString *)transactionId timestamp:(NSString >*)timestamp
+>\- (void) transactionStatus:(BOOL)status currencyAmount:(NSInteger)amount transactionId:(NSString *)transactionId timestamp:(NSString >*)timestamp
 >{
 >    NSString *statusMessage = [NSString alloc];
 >    
