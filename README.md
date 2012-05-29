@@ -40,7 +40,7 @@ You must also make sure your application requires or checks for an Internet conn
 
 #### .h File
 You must subclass your view controller to use the CrowdMob delegate and declare the Offerwall as a CrowdMob class instance.
-<pre><code>@interface ViewController : UIViewController<CrowdMobDelegate, UITextFieldDelegate>
+<pre><code>@interface ViewController : UIViewController\<CrowdMobDelegate, UITextFieldDelegate\>
 {
     CrowdMob *offerwall;
 }</code></pre>
