@@ -21,8 +21,19 @@ The MobDeals Offerwall requires 3 elements:
 3. Listen for a transaction result
 
 #### General Setup
+Two files are absolutely required for utilizing CrowdMob's service, no matter the implementation. These are as follows:
+* CrowdMob.h
+* CrowdMob.m
+
+However, for a complete functionality without any additional modification, the following files should also be included:
+* MobDeals.storyboard
+* cancel_button.png
+* cancel_button@2x.png
+Without these files and additional modification, you will not have a working implementation. These files are used for the layout of the modal view controller that launches the UIWebView for the Offerwall and add a graphic for the close button on the UIWebView. These can all be created or modified as needed to produce the interface that fits your application best as long as they are correctly connected to the CrowdMob.h and Crowdmob.h files.
+
+
 In your view controller that will launch the Offerwall, you must import CrowdMob.h in your .h and .m files.
-<pre><code>\#import "CrowdMob.h"</code></pre>
+<pre><code>#import "CrowdMob.h"</code></pre>
 
 You must also make sure your application requires or checks for an Internet connection. The MobDeals Offerwall interface will not work without an Internet connection.
 
@@ -35,10 +46,10 @@ You must subclass your view controller to use the CrowdMob delegate and declare 
 
 You must also implement the delegate functions to close the Offerwall and obtain the result of a transaction.
 <pre><code>//Delegate method from the modal view controller's required protocol that closes the UIWebView
-\- (void) closeOfferwall:(BOOL) status;
+- (void) closeOfferwall:(BOOL) status;
 
 //Delegate method that runs when a MobDeals transaction succeeds or fails, along with transaction information on success
-\- (void) transactionStatus:(BOOL) status;</code></pre>
+- (void) transactionStatus:(BOOL) status;</code></pre>
 
 #### .m File
 ##### Launching the Offerwall
@@ -61,7 +72,7 @@ offerwall.delegate = self;
 ##### Closing the Offerwall
 When the close button is pressed within the Offerwall, a delegate method is called. You may implement closing the offerwall in whatever manner you wish, but we suggest the following method.
 <pre><code>//Delegate method from the modal view controller's required protocol that closes the UIWebView
-\- (void) closeOfferwall:(BOOL) status
+- (void) closeOfferwall:(BOOL) status
 {
     if (status) {
         //Dismiss the modal view
@@ -79,7 +90,7 @@ When the close button is pressed within the Offerwall, a delegate method is call
 ##### Listening for a Transaction Result
 When a user attempts a transaction, a delegate method is called upon success or failure, returning the status of the transaction. If the transaction succeeds, the amount of virtual currency, the transaction ID, and the timestamp are accessible within this delegate function. You may call the relevant functions that credit the user within this method. The suggested implementation is below.
 <pre><code>//Delegate method that runs when a MobDeals transaction succeeds or fails, along with transaction information on success
-\- (void) transactionStatus:(BOOL)status currencyAmount:(NSInteger)amount transactionId:(NSString *)transactionId timestamp:(NSString *)timestamp
+- (void) transactionStatus:(BOOL)status currencyAmount:(NSInteger)amount transactionId:(NSString *)transactionId timestamp:(NSString *)timestamp
 {
     NSString *statusMessage = [NSString alloc];
     
