@@ -11,15 +11,15 @@ Loot is an incentivized install service. Installs of a particular application th
 The CrowdMob drop-in files offer the ability to verify an install (for Loot) and open a UIWebView and perform a package purchase (for MobDeals). A delegate is used to obtain the result of each of these processes (failure, success, and status code on success for Loot).
 
 ## Implementation
-### MobDeals
-MobDeals requires 3 elements:
+### MobDeals Offerwall
+The MobDeals Offerwall requires 3 elements:
 1. Launching the Offerwall
 2. Closing the Offerwall
 3. Listen for a transaction result
 
 #### General Setup
 In your view controller that will launch the Offerwall, you must import CrowdMob.h in your .h and .m files.
->#import "CrowdMob.h"
+>\#import "CrowdMob.h"
 
 You must also make sure your application requires or checks for an Internet connection. The MobDeals Offerwall interface will not work without an Internet connection.
 
@@ -89,8 +89,8 @@ When a user attempts a transaction, a delegate method is called upon success or 
 >}
 
 #### Production and Staging Environments
-Remember to set the CrowdMob instance object's environment to the appropriate environment for your testing and production purposes. Use "PRODUCTION" for production environment. Use "STAGING" for a staging environment
-offerwall.environment = @"STAGING";
+Remember to set the CrowdMob instance object's environment to the appropriate environment for your testing and production purposes. Use "PRODUCTION" for production environment. Use "STAGING" for a staging environment. This must be done before launching the Offerwall.
+>offerwall.environment = @"STAGING";
 
 ## Question/Comments
 We're developer centric! If you encounter any issues, have questions, or have suggestions or other comments, please don't hesitate to contact us at developers@crowdmob.com. We are available at most hours and will answer your questions as soon as possible.
