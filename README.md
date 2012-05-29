@@ -28,7 +28,7 @@ Two files are absolutely required for utilizing CrowdMob's service, no matter th
 However, for a complete functionality without any additional modification, the following files should also be included:
 * MobDeals.storyboard
 * cancel_button.png
-* cancel_button@2x.png
+* <pre>cancel_button@2x.png</pre>
 
 Without these files and additional modification, you will not have a working implementation. These files are used for the layout of the modal view controller that launches the UIWebView for the Offerwall and add a graphic for the close button on the UIWebView. These can all be created or modified as needed to produce the interface that fits your application best as long as they are correctly connected to the CrowdMob.h and Crowdmob.h files.
 
@@ -46,11 +46,12 @@ You must subclass your view controller to use the CrowdMob delegate and declare 
 }</code></pre>
 
 You must also implement the delegate functions to close the Offerwall and obtain the result of a transaction.
-<pre><code>//Delegate method from the modal view controller's required protocol that closes the UIWebView
+'''objective-c
+//Delegate method from the modal view controller's required protocol that closes the UIWebView
 - (void) closeOfferwall:(BOOL) status;
 
 //Delegate method that runs when a MobDeals transaction succeeds or fails, along with transaction information on success
-- (void) transactionStatus:(BOOL) status;</code></pre>
+- (void) transactionStatus:(BOOL) status;'''
 
 #### .m File
 ##### Launching the Offerwall
