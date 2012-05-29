@@ -17,6 +17,8 @@ The MobDeals Offerwall requires 3 elements:
 2. Closing the Offerwall
 3. Listen for a transaction result
 
+To see a full sample integration of the MobDeals Offerwall, check out our [sample integration app on GitHub](https://github.com/crowdmob/ios-sample-integration).
+
 #### General Setup
 In your view controller that will launch the Offerwall, you must import CrowdMob.h in your .h and .m files.
 >\#import "CrowdMob.h"
